@@ -1,0 +1,139 @@
+{% extends "CREAMainBundle::layout.html.twig" %}
+
+{% block title %} Creatics - Concours d'application mobile organisé à Bamako par Createam {% endblock %}
+
+{% block content %}
+
+    <div class="clearfix"></div>
+
+    <div class="feature_section34">
+        <div class="container">
+            <br />
+            <div class=""><img src="images/slide-bg.jpg" alt="" class="img_size1" /><br /><br /></div><!-- end section --> <br/>
+
+            <br /><br /> <h2 class="caps">
+                Postuler <strong>Ici</strong>
+                <b>Veuillez remplir le formulaire suivant</b>
+            </h2>
+            <div class="clearfix margin_top2"></div>
+
+            <div class="cforms">
+
+                {{ form_start(form, {'attr': {'class' : 'sky-form', 'id':'sky-form' }}) }}
+
+                {# Les erreurs générales du formulaire. #}
+                {{ form_errors(form) }}
+
+
+                    <div class="clearfix"></div>
+                    <fieldset>
+                        <div class="row">
+                            <div class="col col-6">
+                                <label class="input"> <i class="icon-append icon-user"></i>
+                                    {{ form_widget(form.nom, {'attr': {'class': 'form-control ', 'placeholder':'Nom' }}) }}
+                                </label>
+                            </div>
+                            <div class="col col-6">
+                                <label class="input"> <i class="icon-append icon-user"></i>
+                                    {{ form_widget(form.prenom, {'attr': {'class': 'form-control ', 'placeholder':'Prenom'}}) }}
+
+                                </label>
+                            </div>
+                        </div> <br />
+                        <div class="row">
+                            <div class="col col-4">
+                                <label class="input"> <i class="icon-append icon-envelope-alt"></i>
+                                    {{ form_widget(form.email, {'attr': {'class': 'form-control ', 'placeholder':'Votre adresse email'}}) }}
+                                </label>
+                            </div>
+                            <div class="col col-4">
+                                <label class="input"> <i class="icon-append icon-phone"></i>
+                                    {{ form_widget(form.telephone, {'attr': {'class': 'form-control ', 'placeholder':'Votre numéro de téléphone'}}) }}
+                                </label>
+                            </div>
+                            <div class="col col-4">
+                                <label class="input"> <i class="icon-append icon-tag"></i>
+                                    {{ form_widget(form.adresse, {'attr': {'class': 'form-control ' , 'placeholder':'Votre adresse'}}) }}
+                                </label>
+                            </div>
+
+                        </div> <br />
+                        <div class="row">
+                            <div class="col col-6">
+                                <label class="input"> <i class="icon-append icon-tag"></i>
+                                    {{ form_widget(form.nomEntreprise, {'attr': {'class': 'form-control ', 'placeholder':'Le nom de votre entreprise (optionnel)'}}) }}
+                                </label>
+                            </div>
+                            <div class="col col-6">
+                                <label class="input"> <i class="icon-append icon-tag"></i>
+                                    {{ form_widget(form.numeroEnregistrementEntreprise, {'attr': {'class': 'form-control ', 'placeholder':'Numéro d\'enregistrement de l\'entreprise '}}) }}
+                                </label>
+                            </div>
+
+
+                        </div>
+                        <br />
+                        <div class="row">
+
+                            <div class="col col-6">
+                                <label class="input"> Avez vous des aptitudes au codage ?
+                                    {{ form_widget(form.isCoder, {'attr': {'class': 'form-control ', 'placeholder':'Numéro d\'enregistrement de l\'entreprise '}}) }}
+                                </label>
+                            </div>
+                            <div class="col col-6">
+                                <label class="input"> Avez vous dejà un prototype de votre projet ?
+                                    {{ form_widget(form.isPrototype, {'attr': {'class': 'form-control ', 'placeholder':'Numéro d\'enregistrement de l\'entreprise '}}) }}
+                                </label>
+                            </div>
+
+
+                        </div>
+                        <br />
+                        <div>
+                            <label class="textarea"> <i class="icon-append icon-comment"></i>
+                                {{ form_widget(form.descriptionEntreprise, {'attr': {'class': 'form-control ', 'rows': '12', 'placeholder':'Décrivez l\'activité de votre entreprise '}}) }}
+                            </label> <br><br>
+                            <label class="textarea"> <i class="icon-append icon-comment"></i>
+                                {{ form_widget(form.descriptionProduit, {'attr': {'class': 'form-control ', 'rows': '12', 'placeholder':'Décrivez votre produit/application '}}) }}
+
+                            </label>
+                        </div>
+
+                    </fieldset>
+                    <footer>
+                        <button type="submit" class="button">Postuler</button>
+                    </footer>
+
+
+    {% if app.session.flashbag.has('notice') %}
+
+        <div class="message"><i class="icon-ok"></i>
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+
+                {{ flashMessage }}
+
+            {% endfor %}
+        </div>
+
+    {% endif %}
+
+                {{ form_rest(form) }}
+
+                {# Fermeture de la balise <form> du formulaire HTML #}
+                {{ form_end(form) }}
+
+            </div>
+            <!-- end section -->
+
+        </div>
+    </div><!-- end features section 34 -->
+
+
+    <div class="clearfix"></div>
+
+
+
+
+
+
+{% endblock %}

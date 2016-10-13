@@ -1,0 +1,4 @@
+crea_main:
+    resource: "@CREAMainBundle/Resources/config/routing.yml"
+    prefix:   /
+

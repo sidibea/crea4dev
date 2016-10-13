@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: mysql.hostinger.co.uk
+    database_port: null
+    database_name: u581951542_crea
+    database_user: u581951542_crea
+    database_password: sorofing
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: d29f87e305f32bba882db391a79093566c4ac9ab
